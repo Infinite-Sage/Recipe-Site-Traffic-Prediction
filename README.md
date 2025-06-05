@@ -1,33 +1,40 @@
-# Recipe-Site-Traffic-Prediction - Data Science Project
+# 🥗 Recipe Site Traffic Prediction – Data Science Project
 
-# This is a project focusing on predicting recipe popularity on a website. The goal: help the product team decide which recipes to feature on the homepage by identifying those most likely to drive high traffic.
+#### This project predicts recipe popularity on a website. The goal: help the product team decide which recipes to feature on the homepage by identifying those most likely to drive high traffic.
 
 ---
 
-## 🔥 Project Overview
+#### 🔥 Project Overview
 
-This project uses nutritional features and categorical information from a recipe dataset to build a binary classification model predicting "High Traffic" vs "Low Traffic" recipes. 
+This project uses nutritional features and categorical information from a recipe dataset to build a binary classification model predicting "High Traffic" vs "Low Traffic" recipes.
 
-**Key Deliverables:**
-- Data validation and cleaning
-- Exploratory Data Analysis (EDA) with insightful plots
-- Feature engineering and preprocessing
-- Model development (Logistic Regression, Random Forest, XGBoost)
-- Model evaluation using precision and accuracy (precision goal ≥ 0.80)
-- Business recommendations
+Key Deliverables:
+
+    Data validation and cleaning
+
+    Exploratory Data Analysis (EDA) with insightful plots
+
+    Feature engineering and preprocessing
+
+    Model development: Logistic Regression, Random Forest, XGBoost
+
+    Model evaluation using precision and accuracy (goal: precision ≥ 0.80)
+
+    Business recommendations
 
 ---
 
 ## 📊 Notebooks & Files
 
-- `notebook.ipynb`: Main code and analysis
-- `cleaned_recipe_site_traffic.csv`: Cleaned dataset
-- `recipe_site_traffic_2212.csv`: Raw dataset
-- `images/`: Visualizations and charts (optional)
+- notebook.ipynb: Main code and analysis
+
+- cleaned_recipe_site_traffic.csv: Cleaned dataset
+
+- recipe_site_traffic_2212.csv: Raw dataset
 
 ---
 
-## 🚀 Demo: Predictive Function
+## Demo: Predictive Function
 
 A simple interactive function to predict traffic based on a Recipe ID:
 
