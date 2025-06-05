@@ -6,31 +6,23 @@
 
 #### 🔥 Project Overview
 
-This project uses nutritional features and categorical information from a recipe dataset to build a binary classification model predicting "High Traffic" vs "Low Traffic" recipes.
+This project uses nutritional features and categorical information from a recipe dataset to build a **binary classification model** predicting "High Traffic" vs. "Low Traffic" recipes.
 
-Key Deliverables:
-
-    Data validation and cleaning
-
-    Exploratory Data Analysis (EDA) with insightful plots
-
-    Feature engineering and preprocessing
-
-    Model development: Logistic Regression, Random Forest, XGBoost
-
-    Model evaluation using precision and accuracy (goal: precision ≥ 0.80)
-
-    Business recommendations
+**Key Deliverables:**
+- Data validation and cleaning
+- Exploratory Data Analysis (EDA) with insightful plots
+- Feature engineering and preprocessing
+- Model development: Logistic Regression, Random Forest, XGBoost
+- Model evaluation using precision and accuracy (goal: precision ≥ 0.80)
+- Business recommendations
 
 ---
 
 ## 📊 Notebooks & Files
 
-- notebook.ipynb: Main code and analysis
-
-- cleaned_recipe_site_traffic.csv: Cleaned dataset
-
-- recipe_site_traffic_2212.csv: Raw dataset
+- `notebook.ipynb`: Main code and analysis
+- `cleaned_recipe_site_traffic.csv`: Cleaned dataset
+- `recipe_site_traffic_2212.csv`: Raw dataset
 
 ---
 
@@ -43,24 +35,24 @@ try:
     # Check if X_test exists
     if 'X_test' not in globals():
         raise NameError("X_test is not defined. Please run the data split and define X_test.")
-    
+
     # Prompt the user for a Recipe ID
     recipe_id_input = input(f"Enter Recipe ID (0 to {len(X_test)-1}): ").strip()
     recipe_id = int(recipe_id_input)
-    
+
     # Validate Recipe ID range
     if recipe_id < 0 or recipe_id >= len(X_test):
         raise IndexError("Recipe ID out of range")
-    
+
     # Select the row from the test set
     X_query = X_test.iloc[[recipe_id]]
-    
+
     # Apply the preprocessing pipeline
     X_query_transformed = fitted_models['Logistic Regression'].named_steps['preprocess'].transform(X_query)
-    
+
     # Predict using Logistic Regression
     y_pred_query = fitted_models['Logistic Regression'].named_steps['clf'].predict(X_query_transformed)
-    
+
     if y_pred_query[0] == 1:
         print("🚀 This recipe will likely produce HIGH TRAFFIC!")
     else:
@@ -75,11 +67,11 @@ except NameError as e:
 ```
 Final Summary
 
-    Logistic Regression achieved 0.90 precision, meeting the 0.80 business goal
+    1. Logistic Regression achieved 0.90 precision, meeting the 0.80 business goal.
 
-    Random Forest and XGBoost also performed well
+    2. Random Forest and XGBoost also performed well with solid trade-offs in accuracy and precision.
 
-    Business recommendations provided for deployment and monitoring
+    3. Prioritize high-protein and higher-calorie recipes in categories like Vegetables, Potatoes, and Pork.
 
 Business Recommendations
 
@@ -91,8 +83,12 @@ Business Recommendations
 
 🔧 Requirements
 
-    Python 3.x
-
-    pandas, numpy, scikit-learn, matplotlib, seaborn, xgboost
+- Python 3.x
+- pandas
+- numpy
+- scikit-learn
+- matplotlib
+- seaborn
+- xgboost
 
 
