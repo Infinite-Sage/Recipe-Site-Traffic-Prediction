@@ -1,16 +1,16 @@
 # 🥗 Recipe Site Traffic Prediction – Data Science Project
 
-#### This project predicts recipe popularity on a website. The goal: help the product team decide which recipes to feature on the homepage by identifying those most likely to drive high traffic.
+#### This project predicts which recipes are most likely to drive high website traffic when featured on the homepage, helping the product team select recipes that boost customer engagement and subscriptions.
 
 ---
 
 #### 🔥 Project Overview
 
-This project uses nutritional features and categorical information from a recipe dataset to build a **binary classification model** predicting "High Traffic" vs. "Low Traffic" recipes.
+This project uses nutritional and category data from recipes to predict high-traffic vs. low-traffic recipes. I cleaned and analyzed the data, built machine learning models, and provided actionable recommendations. My work also reflects key transferable skills—like data cleaning, variance analysis, and reporting.
 
 **Key Deliverables:**
 - Data validation and cleaning
-- Exploratory Data Analysis (EDA) with insightful plots
+- Exploratory Data Analysis (EDA) to uncover trends
 - Feature engineering and preprocessing
 - Model development: Logistic Regression, Random Forest, XGBoost
 - Model evaluation using precision and accuracy (goal: precision ≥ 0.80)
@@ -20,15 +20,76 @@ This project uses nutritional features and categorical information from a recipe
 
 ## 📊 Notebooks & Files
 
-- `notebook.ipynb`: Main code and analysis
+- `notebook.ipynb`: Contains all the code, analysis, and visualizations
 - `cleaned_recipe_site_traffic.csv`: Cleaned dataset
 - `recipe_site_traffic_2212.csv`: Raw dataset
 
 ---
+## Data Cleaning & Validation
 
-## Demo: Predictive Function
+    - Identified and handled missing values using a grouped median approach.
 
-A simple interactive function to predict traffic based on a Recipe ID:
+    - Removed rows with missing nutritional data, ensuring data quality.
+
+    - Standardized categories and serving sizes.
+
+    - Converted target variable to a clean binary (high/low traffic) to simplify prediction.
+
+---
+## 🔍 Exploratory Analysis
+    - Analyzed distributions of calories, protein, and other nutritional features to spot trends.
+    - Found that high-protein recipes often drive more traffic.
+    - Visualized recipes by category and serving size to understand popularity.
+---
+## Model Development
+I built three machine learning models:
+
+    Logistic Regression: Easy to interpret and excellent for precision.
+
+    Random Forest: Great for handling unusual or “extreme” recipes (outliers).
+
+    XGBoost: Powerful model for capturing complex patterns.
+
+These models predict whether a recipe is likely to be high-traffic or not.
+
+---
+## Results
+
+Key Terms Explained:
+
+- Precision: How often the model correctly identifies recipes that actually bring in high traffic. Think of it as “hitting the right target” — it’s about avoiding false positives.
+
+- Accuracy: Overall, how many recipes the model correctly classifies as either high-traffic or low-traffic. It’s a measure of “total correctness” but can be influenced by class balance.
+
+- Logistic Regression achieved the highest precision (0.90), ensuring fewer false positives—important for confidently choosing homepage recipes.
+
+- Random Forest and XGBoost balanced precision and accuracy, useful for broader scenarios.
+
+- Key features driving traffic predictions included protein content, calories, and recipe categories — insights that can inform content and marketing strategies.
+
+---
+## Business Recommendations
+- Use Logistic Regression as the primary model to select homepage recipes with high confidence.
+
+- Prioritize high-protein, higher-calorie recipes in categories like Vegetables, Potatoes, and Pork, which consistently attracted higher traffic.
+
+- Monitor model performance regularly, adjusting thresholds as needed to align with marketing goals.
+
+## 🔧 Requirements
+
+- Python 3.x
+- pandas
+- numpy
+- scikit-learn
+- matplotlib
+- seaborn
+- xgboost
+
+
+
+## Interactive Demo: Predictive Function
+
+This interactive function allows you to enter a recipe ID and see whether it’s predicted to drive high traffic:
 
 ```python
 try:
@@ -67,7 +128,7 @@ except NameError as e:
 ```
 Final Summary
 
-    1. Logistic Regression achieved 0.90 precision, meeting the 0.80 business goal.
+    1. Logistic Regression achieved 0.90 precision, meeting the 0.80 business goal and proving it’s a reliable first pick for high-traffic recipe selection.
 
     2. Random Forest and XGBoost also performed well with solid trade-offs in accuracy and precision.
 
@@ -75,20 +136,14 @@ Final Summary
 
 Business Recommendations
 
-    Deploy Logistic Regression for homepage recipe selection to avoid wasting slots on low-traffic recipes
+    Deploy Logistic Regression for homepage curation—it’s a precision monster that minimizes false positives, saving homepage space for recipes that actually get clicks.
 
-    Use Random Forest as a secondary model to find even more high-traffic recipes
+    Use Random Forest as a secondary model when you want a broader net—great for exploring untapped high-traffic gems with a balanced precision-accuracy trade-off.
 
-    Prioritize high-protein and higher-calorie recipes in categories like Vegetables, Potatoes, and Pork
-
-🔧 Requirements
-
-- Python 3.x
-- pandas
-- numpy
-- scikit-learn
-- matplotlib
-- seaborn
-- xgboost
+    Prioritize high-protein, higher-calorie recipes, especially in Vegetables, Potatoes, and Pork. They’re consistently strong performers—think marketing campaigns, featured highlights, and homepage slots.
+    
+    Weekly model monitoring: Keep an eye on precision and recall to adjust thresholds fast. Stay agile with marketing and content adjustments.
+    
+    Next Level: Consider adding user engagement metrics (like clicks, time on page) to refine the model.
 
 
