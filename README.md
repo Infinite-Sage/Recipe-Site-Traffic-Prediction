@@ -95,6 +95,4 @@ Business Recommendations
 
     pandas, numpy, scikit-learn, matplotlib, seaborn, xgboost
 
-📝 License
 
-MIT License
