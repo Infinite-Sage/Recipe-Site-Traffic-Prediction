@@ -136,14 +136,14 @@ Final Summary
 
 Business Recommendations
 
-    Deploy Logistic Regression for homepage curation—it’s a precision monster that minimizes false positives, saving homepage space for recipes that actually get clicks.
+    Deploy Logistic Regression as the primary model — it’s a precision monster that minimizes false positives, saving homepage space for recipes that actually get clicks.
 
-    Use Random Forest as a secondary model when you want a broader net—great for exploring untapped high-traffic gems with a balanced precision-accuracy trade-off.
+    Use Random Forest as a secondary model when broader coverage is needed.
 
-    Prioritize high-protein, higher-calorie recipes, especially in Vegetables, Potatoes, and Pork. They’re consistently strong performers—think marketing campaigns, featured highlights, and homepage slots.
+    Prioritize high-protein, higher-calorie recipes, especially in Vegetables, Potatoes, and Pork — these consistently attract more traffic.
     
-    Weekly model monitoring: Keep an eye on precision and recall to adjust thresholds fast. Stay agile with marketing and content adjustments.
+    Monitor model performance weekly—adjust thresholds as marketing goals evolve.
     
-    Next Level: Consider adding user engagement metrics (like clicks, time on page) to refine the model.
+    Next Level: Incorporate user engagement metrics (like clicks/time on page) to enhance predictions.
 
 
